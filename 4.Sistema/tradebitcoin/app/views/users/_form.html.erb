@@ -27,6 +27,19 @@
     <%= f.label :cpf %><br>
     <%= f.number_field :cpf %>
   </div>
+
+  <%= f.fields_for @user.build_client do |c| %>
+    <div class="field">
+      <%= c.label :login %><br>
+      <%= c.text_field :login %>
+    </div>
+
+    <div class="field">
+      <%= c.label :senha %><br>
+      <%= c.text_field :senha %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
