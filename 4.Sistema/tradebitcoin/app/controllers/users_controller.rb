@@ -27,9 +27,14 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    c = Client.new
-    c.user = @user
-    c.save
+    @user.build_client
+    # c = Client.new
+    # c.user = @user
+    #
+    # debugger
+    #
+    # c.login = params[:user][:client][:login]
+    # c.save
 
     respond_to do |format|
       if @user.save
@@ -40,6 +45,10 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def user_params
+    params.permit(:client, :login, :senha)
   end
 
   # PATCH/PUT /users/1
