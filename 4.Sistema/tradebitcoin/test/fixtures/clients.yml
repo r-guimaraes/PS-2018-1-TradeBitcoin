@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  senha: MyString
+  verificado: false
+  user_id: 
+
+two:
+  senha: MyString
+  verificado: false
+  user_id: 
