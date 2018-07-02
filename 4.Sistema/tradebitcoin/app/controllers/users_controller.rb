@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    if Account.find_by_client_id(current_user.id)
+      @contas = Account.find_by_client_id(current_user.id).id
+    else
+      @contas = false
+    end
   end
 
   # GET /users/1

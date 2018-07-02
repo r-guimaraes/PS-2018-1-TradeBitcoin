@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Active:</strong>
-  <%= @account.active %>
+  <strong>Conta ativa?</strong>
+  <%= (@account.active) ? 'Sim': 'Não' %>
 </p>
 
 <p>
-  <strong>Saldo:</strong>
+  <strong>Saldo: R$</strong>
   <%= @account.saldo %>
 </p>
 
@@ -15,10 +15,4 @@
   <%= @account.data_encerramento %>
 </p>
 
-<p>
-  <strong>Client:</strong>
-  <%= @account.client %>
-</p>
-
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+<%= link_to 'Editar', edit_account_path(@account) %> 

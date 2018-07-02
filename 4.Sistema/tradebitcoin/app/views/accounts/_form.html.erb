@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :active %><br>
+    Ativar?<br>
     <%= f.check_box :active %>
   </div>
   <div class="field">
@@ -20,12 +20,8 @@
     <%= f.text_field :saldo %>
   </div>
   <div class="field">
-    <%= f.label :data_encerramento %><br>
+    Encerrar em alguma data?<br>
     <%= f.datetime_select :data_encerramento %>
-  </div>
-  <div class="field">
-    <%= f.label :client_id %><br>
-    <%= f.text_field :client_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

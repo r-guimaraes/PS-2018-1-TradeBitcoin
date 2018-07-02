@@ -10,4 +10,8 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def minhas_contas
+    #id = current_user.id
+  end
 end
