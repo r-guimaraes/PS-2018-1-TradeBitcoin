@@ -1,34 +1,38 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @user.name %>
 </p>
 
-<p>
-  <strong>login:</strong>
-  <%= @user.client.login %>
-</p>
+
+<% if @user.client %>
+  <p>
+    <strong>login:</strong>
+    <%= @user.client.login %>
+  </p>
+
+  <p>
+    <strong>senha:</strong>
+    <%= @user.client.senha %>
+  </p>
+
+<% end %>
 
 <p>
-  <strong>senha:</strong>
-  <%= @user.client.senha %>
-</p>
-
-<p>
-  <strong>Email:</strong>
+  <strong>E-mail:</strong>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong>Rg:</strong>
+  <strong>RG:</strong>
   <%= @user.rg %>
 </p>
 
 <p>
-  <strong>Cpf:</strong>
+  <strong>CPF:</strong>
   <%= @user.cpf %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Editar', edit_user_path(@user) %>
+<%#= link_to 'voltar', users_path %>
