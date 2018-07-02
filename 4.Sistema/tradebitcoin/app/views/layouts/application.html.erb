@@ -8,12 +8,21 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<div class="main-template-tradebitcoin">
 
-<%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-<%= render 'index/footer' %>
+  <p>
+    <%= image_tag "bitcoin.jpg" %>
+  </p>
+
+  <%= yield %>
+
+  <%= render 'index/footer' %>
+
+</div>
+
 
 </body>
 </html>
