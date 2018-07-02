@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    puts @user
   end
 
   # GET /users/new
@@ -28,6 +29,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.build_client
+
+    puts @user
     # c = Client.new
     # c.user = @user
     #
