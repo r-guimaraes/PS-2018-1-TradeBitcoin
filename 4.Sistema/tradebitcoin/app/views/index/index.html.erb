@@ -20,6 +20,11 @@
             <div class="welcome"> Bem vindo, <strong><%= current_user.email %></strong> </div>
 
             <%= link_to 'Veja seu perfil', "users/#{current_user.id}" %>
+
+            <br>
+
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+            
         <%- else %>
             <p>Para começar, faça seu <%= link_to 'login', user_session_path %></p>
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
