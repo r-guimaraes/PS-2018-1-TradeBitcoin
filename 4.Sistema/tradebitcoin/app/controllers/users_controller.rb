@@ -28,7 +28,12 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    @user.build_client
+    r = @user.build_client
+    login = params["user"]["client"]["login"]
+    senha = params["user"]["client"]["senha"]
+
+    r.login = login
+    r.senha = senha
 
     puts @user
     # c = Client.new
@@ -48,10 +53,6 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  def user_params
-    params.permit(:client, :login, :senha)
   end
 
   # PATCH/PUT /users/1
@@ -84,8 +85,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :rg, :cpf)
+      params.require(:user).permit(:name, :email, :rg, :cpf, client_attributes: [:id, :login, :senha])
     end
 end
