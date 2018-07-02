@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  active: false
+  saldo: 1.5
+  data_encerramento: 2018-07-02 17:59:51
+  client_id: 
+
+two:
+  active: false
+  saldo: 1.5
+  data_encerramento: 2018-07-02 17:59:51
+  client_id: 
